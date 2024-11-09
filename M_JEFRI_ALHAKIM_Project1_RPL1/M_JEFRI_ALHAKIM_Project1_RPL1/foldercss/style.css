@@ -1,0 +1,387 @@
+header {
+    display: flex; /* Mengatur tampilan menjadi flex */
+    justify-content: space-between; /* Mengatur item ke kiri dan kanan */
+    border: 5px solid rgba(104, 33, 235, 0.5); /* Menambahkan border pada header */
+    padding: 10px; /* Tambahkan padding untuk ruang di dalam header */
+    border-radius: 20%;
+    margin-bottom: 15px; /* Tambahkan margin bawah untuk memberikan jarak ke nav */
+    backdrop-filter: blur(5px); /* Menambahkan efek blur */
+    background-color: #ffffff2d; /* Warna latar belakang konten */
+}
+
+header img {
+    transition: filter 0.5s, transform 0.5s; /* Menambahkan transisi untuk efek filter dan transform */
+    border: 5px solid rgba(104, 33, 235, 0.5); /* Mengubah border menjadi warna bebas sedikit transparant */
+}
+
+header img:hover {
+    filter: hue-rotate(360deg); /* Mengubah warna gambar saat hover */
+    transform: scale(1.07); /* Memperbesar gambar saat hover */
+    animation: rainbow-border 1s infinite; /* Menambahkan animasi border warna-warni */
+}
+
+@keyframes rainbow-border {
+    0% { box-shadow: 0 0 10px 5px rgb(255, 0, 0); } /* Merah */
+    25% { box-shadow: 0 0 10px 5px rgb(255, 128, 0); } /* Oranye */
+    50% { box-shadow: 0 0 10px 5px rgb(0, 255, 0); } /* Hijau */
+    75% { box-shadow: 0 0 10px 5px rgb(0, 0, 255); } /* Biru */
+    100% { box-shadow: 0 0 10px 5px rgb(255, 0, 255); } /* Ungu */
+}
+
+nav {
+    display: flex; /* Mengubah tampilan menjadi flex */
+    justify-content: left; /* Memusatkan item di dalam nav */
+    align-items: left; /* Mengatur item agar berada di tengah secara vertikal */
+    grid-area: nav;
+    border: 5px solid rgba(104, 33, 235, 0.5); /* Mengubah border menjadi warna bebas sedikit transparant */
+    border-radius: 20%;
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+    padding: 10px; /* Tambahkan padding untuk ruang di dalam nav */
+    margin-top: 5px; /* Tambahkan margin atas jika diperlukan */
+    position: relative; /* Tambahkan posisi relatif */
+    z-index: 1; /* Pastikan z-index lebih tinggi dari overlay */
+    backdrop-filter: blur(5px); /* Menambahkan efek blur */
+    background-color: #ffffff2d; /* Warna latar belakang konten */
+}
+
+nav ul {
+    display: flex; /* Menjadikan daftar item menjadi horizontal */
+    list-style-type: none; /* Menghilangkan bullet point */
+    padding: 0; /* Menghapus padding */
+    margin: 0; /* Menghapus margin */
+}
+
+nav li {
+    margin: 0 9px; /* Menambahkan jarak antar item */
+}
+
+nav a, .sidebar a {
+    color: inherit; /* Menggunakan warna teks yang ada */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+}
+
+nav ul li:hover, .sidebar ul li:hover {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.4s; /* Menggunakan cubic-bezier untuk efek bounce */
+    transform: scale(1.1) translateY(-5px); /* Memperbesar dan mengangkat item sedikit ke atas saat hover */
+    background-color: rgba(255, 255, 255, 0.5); /* Menambahkan latar belakang lebih cerah saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Menambahkan bayangan yang lebih dalam saat hover */
+}
+
+nav ul li {
+    display: flex; /* Mengatur item menjadi flex */
+    align-items: center; /* Memusatkan ikon dan teks secara vertikal */
+}
+
+nav ul li .icon img {
+    width: 40px; /* Mengatur lebar ikon GIF */
+    height: 40px; /* Mengatur tinggi ikon GIF */
+    transition: transform 0.3s; /* Transisi saat hover */
+}
+
+nav ul li .icon img:hover {
+    transform: scale(1.5); /* Memperbesar gambar saat hover */
+}
+
+.container {
+    display: flex; /* Menggunakan flexbox untuk mengisi ruang */
+    height: calc(100); /* Mengisi tinggi penuh */
+    gap: 20px; /* Jarak antara sidebar dan konten */
+    flex: 1; /* Memastikan container mengisi ruang yang tersedia */
+    padding: 20px; /* Tambahkan padding untuk container */
+}
+
+.sidebar {
+    background-color: transparent; /* Mengubah warna latar belakang sidebar menjadi transparan */
+    padding: 0px; /* Padding untuk sidebar */
+    flex: 0.6; /* Mengisi ruang yang tersedia */
+    margin-top: 5px; /* Mengurangi margin atas */
+    border: 5px solid rgba(104, 33, 235, 0.5); /* Mengubah border menjadi warna bebas sedikit transparant */
+    border-radius: 3%;
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+    padding: 10px; /* Tambahkan padding untuk sidebar */
+    position: relative; /* Tambahkan posisi relatif */
+    z-index: 1; /* Pastikan z-index lebih tinggi dari overlay */
+    backdrop-filter: blur(5px); /* Menambahkan efek blur */
+    background-color: #ffffff2d; /* Warna latar belakang konten */
+}
+
+.sidebar ul {
+    display: flex; /* Mengatur tampilan daftar item menjadi flex */
+    flex-direction: column; /* Mengatur arah menjadi kolom */
+    padding-top: 2px;
+}
+
+.sidebar li {
+    margin: 0 10px;
+    padding-left: 20px; /* Menggeser seluruh daftar ke kanan */
+}
+
+.sidebar ul li {
+    margin-bottom: 30px; /* Jarak ke bawah setiap item daftar */
+    display: flex; /* Mengatur item menjadi flex */
+    align-items: center; /* Memusatkan ikon dan teks secara vertikal */
+    transition: transform 0.3s; /* Tambahkan transisi untuk efek hover */
+    margin-top: 1px;
+}
+
+.sidebar ul li img {
+    width: 20px; /* Mengatur lebar ikon */
+    height: 20px; /* Mengatur tinggi ikon */
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+    transition: transform 0.3s; /* Transisi saat hover */
+}
+
+.sidebar ul li img:hover {
+    transform: scale(1.5); /* Memperbesar gambar saat hover */
+}
+
+.content {
+    backdrop-filter: blur(5px); /* Menambahkan efek blur */
+    background-color: #ffffff2d; /* Warna latar belakang konten */
+    padding: 0px; /* Padding untuk konten */
+    flex: 3; /* Mengisi ruang yang tersedia */
+    margin-top: 5px;
+    border-radius: 3%;
+    border: 5px solid rgba(104, 33, 235, 0.5); /* Mengubah border menjadi warna bebas sedikit transparant */
+    grid-area: content;
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+    padding: 20px; /* Tambahkan padding untuk konten */
+}
+
+.content h2 {
+    margin-top: 0; /* Mengatur margin atas untuk h1 agar sejajar dengan h2 di sidebar */
+    padding-top: 10px; /* Tambahkan padding atas jika diperlukan untuk penyesuaian */
+}
+
+body {
+    position: relative; /* Menambahkan posisi relatif untuk body */
+    margin: 0; /* Menghapus margin default */
+    height: 100vh; /* Memastikan body mengisi tinggi viewport */
+    display: flex;
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    min-height: 100vh; /* Memastikan tinggi minimal body 100% dari viewport */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: black; /* Mengatur warna teks menjadi hitam */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+    font-weight: bold;
+}
+
+footer {
+    margin-top: auto; /* Memindahkan footer ke bawah */
+    text-align: center; /* Mengatur teks footer agar berada di tengah */
+    grid-area: footer;
+    padding: 3px;
+    border: 5px solid rgba(104, 33, 235, 0.5); /* Mengubah border menjadi warna bebas sedikit transparant */
+    margin-bottom: 10px; /* Menambahkan ruang di bawah footer */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+    padding: 10px; /* Tambahkan padding untuk footer */
+    backdrop-filter: blur(5px); /* Menambahkan efek blur */
+    background-color: #ffffff2d; /* Warna latar belakang konten */
+}
+
+#animated-text {
+    margin-bottom: 10px; /* Mengatur jarak bawah untuk h2 */
+    margin-top: 5px; /* Mengatur jarak atas untuk h2 */
+}
+
+#sub-text-1 {
+    margin-top: 10px; /* Jarak atas untuk sub-text-1 */
+    margin-bottom: 0; /* Menghapus margin bawah */
+}
+
+#sub-text-2 {
+    margin-top: 0; /* Menghapus jarak atas untuk sub-text-2 */
+    margin-bottom: 5px; /* Jarak bawah untuk sub-text-2 */
+}
+
+.video-background {
+    position: fixed; /* Posisi tetap untuk menutupi seluruh halaman */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mengatur lebar 100% */
+    height: 100%; /* Mengatur tinggi 100% */
+    overflow: hidden; /* Menghindari overflow */
+    z-index: -1; /* Menempatkan di belakang konten lainnya */
+}
+
+.background-video {
+    position: absolute; /* Posisi absolut untuk menutupi seluruh div */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mengatur lebar 100% */
+    height: 100%; /* Mengatur tinggi 100% */
+    object-fit: cover; /* Memastikan video menutupi seluruh area */
+    z-index: -1; /* Menempatkan di belakang konten lainnya */
+}
+
+nav {
+    position: relative; /* Tambahkan posisi relatif */
+    z-index: 1; /* Pastikan z-index lebih tinggi dari video */
+}
+
+.sidebar {
+    position: relative; /* Tambahkan posisi relatif */
+    z-index: 1; /* Pastikan z-index lebih tinggi dari gif */
+}
+
+.sidebar h2 {
+    display: flex; /* Mengatur h2 menjadi flex */
+    justify-content: space-between; /* Menyusun item di dalam h2 */
+    align-items: center; /* Memusatkan item secara vertikal */
+    position: relative; /* Menambahkan posisi relatif untuk h2 */
+    z-index: 1; /* Pastikan h2 berada di atas elemen lain */
+}
+
+.dropdown-button {
+    cursor: pointer; /* Menunjukkan bahwa ini adalah elemen yang dapat diklik */
+    width: 40px; /* Sesuaikan ukuran tombol dengan ikon GIF */
+    height: 40px; /* Sesuaikan ukuran tombol dengan ikon GIF */
+    background: url('../iconGambar/button.gif') no-repeat center center; /* Ganti dengan path GIF Anda */
+    background-size: contain; /* Menyesuaikan ukuran gambar */
+    position: relative; /* Menambahkan posisi relatif untuk tombol */
+    left: -80px; /* Menggeser tombol ke kiri */
+    top: -5px; /* Menggeser tombol ke atas */
+}
+
+.hidden {
+    display: none; /* Menyembunyikan item */
+}
+
+#dropdown-toggle:checked + .dropdown {
+    display: block; /* Menampilkan dropdown saat checkbox dicentang */
+    animation: slideDown 0.5s ease; /* Animasi dropdown */
+}
+
+@keyframes slideDown {
+    0% {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        transform: translateY(-20px); /* Tambahkan sedikit pergerakan ke atas */
+    }
+    80% {
+        transform: translateY(5px); /* Tambahkan efek bounce */
+    }
+    100% {
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px 0;
+        transform: translateY(0); /* Kembali ke posisi normal */
+    }
+}
+
+.dropdown {
+    display: block; /* Ubah menjadi block agar selalu ada dalam DOM */
+    overflow: hidden; /* Tetap menghindari overflow */
+    max-height: 0; /* Mulai dari tinggi 0 */
+    opacity: 0; /* Mulai dari transparan */
+    transition: max-height 0.7s ease-out, opacity 0.7s ease-out, padding 0.7s ease-out; /* Tambahkan transisi untuk padding */
+    padding: 0; /* Mulai tanpa padding */
+    z-index: 1;
+}
+
+.dropdown li {
+    cursor: pointer; /* Mengubah kursor menjadi pointer */
+}
+
+#dropdown-toggle:checked + .dropdown {
+    max-height: 500px; /* Tinggi maksimum dropdown saat dicentang */
+    opacity: 1;
+    padding: 10px 0; /* Tambahkan padding saat terbuka */
+    animation: slideDown 0.7s ease-out; /* Animasi dropdown */
+}
+
+.sidebar ul li:hover {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.4s; /* Menggunakan cubic-bezier untuk efek bounce */
+    transform: scale(1.1) translateY(-5px); /* Memperbesar dan mengangkat item sedikit ke atas saat hover */
+    background-color: rgba(255, 255, 255, 0.5); /* Menambahkan latar belakang lebih cerah saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Menambahkan bayangan yang lebih dalam saat hover */
+    z-index: 4; /* Pastikan elemen li berada di atas elemen lain saat di-hover */
+}
+
+.dropdown-button:hover {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.4s; /* Menggunakan cubic-bezier untuk efek bounce */
+    transform: scale(1.5) translateY(-5px); /* Memperbesar dan mengangkat item sedikit ke atas saat hover */
+}
+
+@media (max-width: 1200px) {
+    header, nav, .sidebar, .content, footer {
+        padding: 5px; /* Kurangi padding untuk perangkat lebih kecil */
+    }
+
+    .container {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        gap: 10px; /* Kurangi jarak antar elemen */
+    }
+
+    .sidebar {
+        flex: 1; /* Isi ruang yang tersedia */
+    }
+
+    .content {
+        flex: 1; /* Isi ruang yang tersedia */
+    }
+}
+
+/* Media query untuk perangkat dengan lebar maksimum 768px (tablet) */
+@media (max-width: 768px) {
+    header, nav, .sidebar, .content, footer {
+        padding: 5px; /* Kurangi padding untuk perangkat lebih kecil */
+    }
+
+    nav ul {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+    }
+
+    nav li {
+        margin: 5px 0; /* Tambahkan margin vertikal antar item */
+    }
+
+    .container {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        gap: 10px; /* Kurangi jarak antar elemen */
+    }
+
+    .sidebar {
+        flex: 1; /* Isi ruang yang tersedia */
+    }
+
+    .content {
+        flex: 1; /* Isi ruang yang tersedia */
+    }
+}
+
+/* Media query untuk perangkat dengan lebar maksimum 480px (ponsel) */
+@media (max-width: 480px) {
+    header, nav, .sidebar, .content, footer {
+        padding: 5px; /* Kurangi padding untuk perangkat lebih kecil */
+    }
+
+    nav ul {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+    }
+
+    nav li {
+        margin: 5px 0; /* Tambahkan margin vertikal antar item */
+    }
+
+    .container {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        gap: 5px; /* Kurangi jarak antar elemen */
+    }
+
+    .sidebar {
+        flex: 1; /* Isi ruang yang tersedia */
+    }
+
+    .content {
+        flex: 1; /* Isi ruang yang tersedia */
+    }
+
+    .dropdown-button {
+        left: 0; /* Sesuaikan posisi tombol dropdown */
+        top: 0; /* Sesuaikan posisi tombol dropdown */
+    }
+}
