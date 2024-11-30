@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Muhammad Jefri Project 1</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <header style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="header-text">
+                <h2 id="animated-text"></h2> 
+                <h4 id="sub-text-1"></h4> 
+                <h4 id="sub-text-2"></h4> 
+            </div>
+            <img class="header-img" src="iconGambar/jepri.jpeg" width="130" height="130" style="border-radius: 50%; position: relative; left: -35px;" />
+        </header>
+
+        <div class="video-background">
+            <video autoplay muted loop class="background-video">
+                <source src="iconGambar/KOI Fish! Sachiro (Animated wallpaper) (1080p, h264, youtube).mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a> <span class="icon"><img src="iconGambar/home.gif" alt="Home Icon" /></span></li>
+                <li><a href="profile.html">Profile</a> <span class="icon"><img src="iconGambar/profile.gif" alt="Profile Icon" /></span></li>
+                <li>
+                    <label for="dropdown-toggle" style="cursor: pointer;">Tutorial</label>
+                    <span class="icon"><img src="iconGambar/tutorial.gif" alt="Tutorial Icon" /></span>
+                </li>
+                <li><a href="contact.html">Contact</a> <span class="icon"><img src="iconGambar/contact.gif" alt="Contact Icon" /></span></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <aside class="sidebar">
+                <h2>Tutorial <label for="dropdown-toggle" class="dropdown-button"></label></h2>
+                <input type="checkbox" id="dropdown-toggle" class="hidden">
+                <ul class="dropdown">
+                    <li onclick="showContent('html')"> Html <img src="iconGambar/html-5.png" alt="HTML Icon" /></li>
+                    <li onclick="showContent('css')"> Css <img src="iconGambar/css-3.png" alt="CSS Icon" /></li>
+                    <li onclick="showContent('php')"> Php <img src="iconGambar/php.png" alt="PHP Icon" /></li>
+                    <li onclick="showContent('python')"> Python <img src="iconGambar/python.png" alt="Python Icon" /></li>
+                    <li onclick="showContent('java')"> Java <img src="iconGambar/java.png" alt="Java Icon" /></li>
+                </ul>
+            </aside>
+            <main class="content">
+                <h2>Penjelasan</h2>
+                <p id="content-description">Ini adalah area Penjelasan</p>
+            </main>
+        </div>
+
+        <footer>
+            <p>Copyright &copy; 2024 by Muhammad Jefri Alhakim</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
